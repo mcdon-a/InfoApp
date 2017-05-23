@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, TouchableWithoutFeedback, View } from 'react-native';
+import { Text, TouchableWithoutFeedback, View, LayoutAnimation, UIManager } from 'react-native';
 import { connect } from 'react-redux';
 import { CardSection } from './common';
 import * as actions from '../actions';
@@ -7,6 +7,12 @@ import * as actions from '../actions';
 //The import * as variable is for importing everything from a file and then assigning it
 
 class ListItem extends Component {
+    componentWillMount() {
+        UIManager.setLayoutAnimationEnabledExperimental && UIManager.setLayoutAnimationEnabledExperimental(true);
+    }
+    componentWillUpdate() {
+        LayoutAnimation.spring();
+    }
     renderDescription() {
         const { library, expanded } = this.props;
         if (expanded) {
