@@ -4,10 +4,10 @@ import { CardSection } from './common';
 
 class ListItem extends Component {
     render() {
-        const { titleSyle } = styles;
+        const { titleStyle } = styles;
         return (
         <CardSection>
-            <Text style={titleSyle}>{this.props.library.title}</Text>
+            <Text style={titleStyle}>{this.props.library.title}</Text>
         </CardSection>
         );
     }
