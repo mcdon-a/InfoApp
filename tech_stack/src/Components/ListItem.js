@@ -8,10 +8,12 @@ import * as actions from '../actions';
 
 class ListItem extends Component {
     renderDescription() {
-        const { library, expanded} = this.props;
+        const { library, expanded } = this.props;
         if (expanded) {
             return (
-                <Text>{library.description}</Text>
+                <CardSection>
+                    <Text style={{ flex: 1 }}>{library.description}</Text>
+                </CardSection>
             );
         }
     }
