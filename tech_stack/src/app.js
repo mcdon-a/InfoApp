@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducers from './reducers';
-import Header from './Components/common/Header';
+import { Header } from './Components/common';
 import LibraryList from './Components/LibraryList';
 
 
