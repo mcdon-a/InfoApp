@@ -7,21 +7,34 @@ import * as actions from '../actions';
 //The import * as variable is for importing everything from a file and then assigning it
 
 class ListItem extends Component {
+    renderDescription() {
+        const { library, selectedLibraryId } = this.props;
+        if (library.id === selectedLibraryId) {
+            return (
+                <Text>{library.description}</Text>
+            );
+        }
+    }
     render() {
         const { titleStyle } = styles;
         const { id, title } = this.props.library;
-        console.log(this.props);
+
         return (
         <TouchableWithoutFeedback onPress={() => this.props.selectLibrary(id)}>
             <View>
                 <CardSection>
                     <Text style={titleStyle}>{title}</Text>
                 </CardSection>
+                {this.renderDescription()}
             </View>
         </TouchableWithoutFeedback>
         );
     }
 }
+
+const mapStateToProps = state => {
+    return { selectedLibraryId: state.selectedLibraryId };
+};
 
 const styles = {
     titleStyle: {
@@ -29,4 +42,4 @@ const styles = {
         marginLeft: 15
     }
 };
-export default connect(null, actions)(ListItem);
+export default connect(mapStateToProps, actions)(ListItem);
