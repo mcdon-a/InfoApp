@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducers from './reducers';
 import Header from './Components/common/Header';
+import LibraryList from './Components/common/LibraryList';
 
 
 const App = () => {
@@ -12,6 +13,7 @@ const App = () => {
         <Provider store={createStore(reducers)}>
             <View>
             <Header headerText="Tech Stack" />
+            <LibraryList />
             </View>
         </Provider>
     );
