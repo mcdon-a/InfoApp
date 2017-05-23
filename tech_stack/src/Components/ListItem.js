@@ -8,7 +8,7 @@ class ListItem extends Component {
             <CardSection>
                 <Text>{this.props.library.title}</Text>
             </CardSection>
-        )
+        );
     }
 }
 
